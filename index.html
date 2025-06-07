@@ -84,15 +84,10 @@
         }
     </style>
     <script>
-        // 여기에 JavaScript 코드를 작성할 거예요!
-
-// 1. 필요한 HTML 요소들을 가져오기
-const messagesDiv = document.querySelector('.messages'); // 대화 메시지가 표시될 영역
-const inputField = document.querySelector('.input-area input'); // 입력 필드
-const sendButton = document.querySelector('.input-area button'); // 전송 버튼
-
-// 2. 답변 규칙 정의 (간단한 규칙)
-const botResponses = {
+        const messagesDiv = document.querySelector('.messages'); // 대화 메시지가 표시될 영역
+        const inputField = document.querySelector('.input-area input'); // 입력 필드
+        const sendButton = document.querySelector('.input-area button'); // 전송 버튼
+        const botResponses = {
     "안녕": "안녕하세요! 반갑습니다.",
     "뭐해": "저는 당신의 질문에 답할 준비가 되어 있습니다.",
     "이름이 뭐야": "저는 당신을 돕기 위해 만들어진 챗봇입니다.",
@@ -102,7 +97,6 @@ const botResponses = {
     // "질문": "답변", 형식으로 추가
 };
 
-// 3. 메시지를 화면에 추가하는 함수
 function addMessage(text, sender) {
     const messageBubble = document.createElement('div');
     messageBubble.classList.add('message-bubble');
@@ -117,7 +111,6 @@ function addMessage(text, sender) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight; // 스크롤을 맨 아래로 내림
 }
 
-// 4. 메시지 전송 버튼 클릭 또는 엔터 키 입력 시 동작
 function sendMessage() {
     const userText = inputField.value.trim(); // 사용자가 입력한 텍스트 가져오기 (공백 제거)
 
@@ -128,8 +121,6 @@ function sendMessage() {
     addMessage(userText, 'user'); // 사용자 메시지 화면에 추가
     inputField.value = ''; // 입력 필드 초기화
 
-    // 봇의 답변 찾기 (입력된 텍스트와 정확히 일치하는 답변 찾기)
-    // 소문자로 변환해서 비교하면 더 유연해져요. (예: "안녕" -> "안녕")
     const lowerCaseUserText = userText.toLowerCase();
     let botReply = "죄송합니다. 이해하지 못했습니다. 다른 질문을 해주세요."; // 기본 답변
 
@@ -138,14 +129,11 @@ function sendMessage() {
     }
     // TODO: 여기에 더 복잡한 답변 로직을 추가할 수 있어요 (예: 특정 키워드 포함 여부)
 
-
-    // 봇의 답변을 약간의 딜레이 후에 표시 (진짜 봇처럼 보이게)
     setTimeout(() => {
         addMessage(botReply, 'ai');
     }, 500); // 0.5초 후에 답변 표시
 }
 
-// 5. 이벤트 리스너 연결
 sendButton.addEventListener('click', sendMessage); // 버튼 클릭 시 sendMessage 함수 실행
 
 inputField.addEventListener('keypress', (event) => { // 엔터 키 입력 시 sendMessage 함수 실행
@@ -162,7 +150,7 @@ addMessage("안녕하세요! 무엇이 궁금하신가요?", 'ai'); // 시작 �
 </head>
 <body>
     <div class="chat-container">
-        <div class="chat-header">AI 어시스턴트</div>
+        <div class="chat-header">trAvel</div>
         <div class="messages">
             <div class="message-bubble ai-message">안녕하세요! 무엇을 도와드릴까요?</div>
             <div class="message-bubble user-message">반가워! 너는 누구니?</div>
