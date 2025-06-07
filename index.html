@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel 여행 계획</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #4CAF50; /* 구글 AI 계열 색상 느낌 */
+            color: white;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 400px; /* 대화창 높이 제한 */
+            border-bottom: 1px solid #eee;
+        }
+        .message-bubble {
+            background-color: #e0e0e0;
+            border-radius: 18px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #DCF8C6; /* 사용자 메시지 색상 */
+            margin-left: auto; /* 오른쪽 정렬 */
+        }
+        .ai-message {
+            background-color: #e0e0e0; /* AI 메시지 색상 */
+            margin-right: auto; /* 왼쪽 정렬 */
+        }
+        .input-area {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        .input-area input {
+            flex-grow: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 10px 15px;
+            font-size: 1em;
+            outline: none;
+        }
+        .input-area button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .input-area button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">AI 어시스턴트</div>
+        <div class="messages">
+            <div class="message-bubble ai-message">안녕하세요! 무엇을 도와드릴까요?</div>
+            <div class="message-bubble user-message">반가워! 너는 누구니?</div>
+            <div class="message-bubble ai-message">저는 구글에서 훈련한 대규모 언어 모델입니다.</div>
+            <div class="message-bubble user-message">오늘 날씨는 어때?</div>
+            <div class="message-bubble ai-message">죄송해요, 저는 실시간 날씨 정보에 접근할 수 없습니다.</div>
+        </div>
+        <div class="input-area">
+            <input type="text" placeholder="메시지를 입력하세요...">
+            <button>전송</button>
+        </div>
+    </div>
+</body>
+</html>
